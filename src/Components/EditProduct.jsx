@@ -11,6 +11,7 @@ const EditProduct = () => {
   const { product, isUpdated } = useSelector(state => state.productReducer)
   const [productInput, setProductInput] = useState({
     id: "",
+    image: "",
     name: "",
     category: "",
     price: "",
@@ -49,6 +50,21 @@ const EditProduct = () => {
     <>
       <Container>
         <Form onSubmit={handelSubmit}>
+
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm="2">
+              Product Image
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control
+                type="text"
+                placeholder="Enter Image"
+                name="image"
+                value={productInput.image}
+                onChange={handelChanged}
+              />
+            </Col>
+          </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
             <Form.Label column sm="2">

@@ -1,3 +1,36 @@
 {
-  "product": []
+  "product": [
+    {
+      "id": "875",
+      "image": "https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg",
+      "name": "qwer",
+      "category": "asd",
+      "price": "19654",
+      "description": "sdfdsfsd"
+    },
+    {
+      "id": "394",
+      "image": "https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg",
+      "name": "qwer",
+      "category": "asd",
+      "price": "1234",
+      "description": "asd"
+    },
+    {
+      "id": "924",
+      "image": "https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg",
+      "name": "asd",
+      "category": "A TO Z",
+      "price": "123",
+      "description": "dsfsdf"
+    },
+    {
+      "id": "097",
+      "image": "https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg",
+      "name": "asd",
+      "category": "A TO Z",
+      "price": "123",
+      "description": "asd"
+    }
+  ]
 }

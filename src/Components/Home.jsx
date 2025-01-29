@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProductAsync, getAllProducts, getAllProductsAsync } from "../services/actions/product.Action";
 import { useNavigate } from "react-router";
+import { Button, Card, Row } from "react-bootstrap";
 
 function Home() {
   const { products, isLoading } = useSelector((state) => state.productReducer);
@@ -19,37 +20,30 @@ function Home() {
     dispatch(getAllProductsAsync());
   }, []);
   return (
-    <div className="border border-5 border-dark p-1">
+    <div >
       {isLoading ? <h2>Loading....</h2> : products.length == 0 ? (
         <h4>Product Not Found</h4>
       ) : (
-        <table width={'100%'}>
-          <thead className="border border-5 border-dark">
-            <tr>
-              <th className="border border-5 border-dark">id</th>
-              <th className="border border-5 border-dark">Product Name</th>
-              <th className="border border-5 border-dark">Prodict Category</th>
-              <th className="border border-5 border-dark">Product Price </th>
-              <th className="border border-5 border-dark">Product description</th>
-              <th className="border border-5 border-dark" colSpan={2}>Actions</th>
-            </tr>
-          </thead>
-          <tbody >
+        <>
+          <div className="d-flex gap-3">
             {products.map((product) => (
-              <tr key={product.id} >
-                <td className="border border-5 border-dark">{product.id}</td>
-                <td className="border border-5 border-dark">{product.name}</td>
-                <td className="border border-5 border-dark">{product.category}</td>
-                <td className="border border-5 border-dark">{product.price}</td>
-                <td className="border border-5 border-dark">{product.description}</td>
-                <td className="border border-5 border-dark">
-                  <button className="me-3" onClick={() => handleEdit(product.id)}>Product Edit</button>
-                  <button onClick={() => handleDelete(product.id)}>Product Delete</button>
-                </td>
-              </tr>
+              <Card key={product.id} style={{width : "34%"}}>
+                <Card.Img src={product.image} />
+                <Card.Body>
+                  <Card.Title>Product Id :- {product.id}</Card.Title>
+                  <Card.Text>Product Name :- {product.name}</Card.Text>
+                  <Card.Text>Product Category :- {product.category}</Card.Text>
+                  <Card.Text>Product Price :- {product.price}</Card.Text>
+                  <Card.Text>Product Description :- {product.description}</Card.Text>
+                  <div className="text-center">
+                    <Button className="me-3" onClick={() => handleEdit(product.id)}>Edit</Button>
+                    <Button onClick={() => handleDelete(product.id)}>Delete</Button>
+                  </div>
+                </Card.Body>
+              </Card>
             ))}
-          </tbody>
-        </table>
+          </div>
+        </>
       )}
     </div>
   );
