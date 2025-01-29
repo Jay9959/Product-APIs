@@ -147,7 +147,7 @@ const AddProduct = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Col sm={{ span: 10, offset: 2 }}>
+            <Col sty sm={{ span: 10, offset: 2 }}>
               <Button type="submit">Add Product</Button>
             </Col>
           </Form.Group>
