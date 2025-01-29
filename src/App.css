@@ -7,7 +7,8 @@
 
 body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  color: white;
   background-image: url('https://t3.ftcdn.net/jpg/08/36/64/42/360_F_836644255_xzKQ2Zh7rCAfsYIlwW6GKkyevsvdT0Xv.jpg');
   background-position: center;
   background-size: cover;
